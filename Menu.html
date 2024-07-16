@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Comida</title>
+    <link rel="stylesheet" href="B.styles.css">
+    <script defer src="B.script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Antojitos Doña Lupe</h1>
+        <nav>
+            <ul>
+                <li><a href="Inicio.html">Inicio</a></li>
+                <li><a href="Menu.html">Menú</a></li>
+                <li><a href="Contacto.html">Contacto</a></li>
+                <li><a href="Local.html">Ubicación</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <section id="menu">
+        <h2>Menú</h2>
+
+        <h3>Si tiene dudas o quiere hacer algunas especificaciones referente a su pedido favor de comentarlas</h3>
+
+        <div class="comida-item">
+            <img src="Flautas.jpeg" alt="Flautas">
+            <h3>Flautas</h3>
+            <p>Deliciosa flautas con lechuga, crema, guacamole y tomate.</p>
+            <span class="precio">$75 - Preparadas o Con todo aparte</span>
+            <button onclick="chooseSize('Flautas', 'sizeModalFlautas', 75, 75)">Añadir al carrito</button>
+        </div>
+
+        <div class="comida-item">
+            <img src="Frijoles.jpeg" alt="Frijoles a la charra">
+            <h3>Frijoles a la charra</h3>
+            <p>Frijoles y sus tamaños</p>
+            <span class="precio">$20 - De 1/4, $30 - De 1/2, $60 - De 1 litro</span>
+            <button onclick="chooseSize('Frijoles a la charra', 'sizeModalFrijoles', 20, 30, 60)">Añadir al carrito</button>
+        </div>
+
+
+        <div class="comida-item">
+            <img src="Enchiladas.jpeg" alt="Enchiladas">
+            <h3>Enchiladas</h3>
+            <p>Deliciosas enchiladas con tomate, papa, zanahoria y chile toriado.</p>
+            <span class="precio">$75 - Con cebolla, Sin cebolla</span>
+            <button onclick="chooseSize('Enchiladas', 'sizeModalEnchiladas', 75, 75)">Añadir al carrito</button>
+        </div>
+
+        <div class="comida-item">
+            <img src="Gorditas.jpeg" alt="Gorditas">
+            <h3>Gorditas</h3>
+            <p>Deliciosas gorditas con lechuga y tomate.</p>
+            <span class="precio">$75 - Chicharron en salsa verde, Picadillo con papas, Pollo con chile colorado, Frijoles con queso</span>
+            <button onclick="chooseSize('Guisos', 'sizeModalGuisos', 75, 75, 75, 75)">Añadir al carrito</button>
+        </div>
+
+        <div class="comida-item">
+            <img src="Hamburguesa.jpeg" alt="Hamburguesa">
+            <h3>Hamburguesa</h3>
+            <p>Deliciosa hamburguesa con mayonesa, mostaza, aguacate, tomate, cabolla, lechuga, capsup, carne, jamon y queso.</p>
+            <span class="precio">$55-Censilla y $65-Doble</span>
+            <button onclick="chooseSize('Hamburguesas', 'sizeModalHamburguesas', 55, 65)">Añadir al carrito</button>
+        </div>
+
+        <div class="comida-item">
+            <img src="Tacos.jpeg" alt="Tacos">
+            <h3>Tacos</h3>
+            <p>Tacos de bistec.</p>
+            <span class="precio">$75</span>
+            <button onclick="addToCart('Tacos', 75)">Añadir al carrito</button>
+        </div>
+
+        <div class="comida-item">
+            <img src="Sopes.jpeg" alt="Sopes">
+            <h3>Sopes</h3>
+            <p>Deliciosos sopes con lechuga,crema y tomate.</p>
+            <span class="precio">$75 - Chicharron en salsa verde, Picadillo con papas, Pollo con chile colorado, Frijoles con queso</span>
+            <button onclick="chooseSize('Guisos', 'sizeModalGuisos', 75, 75, 75, 75)">Añadir al carrito</button>
+        </div>
+    </section>
+
+
+    <!-- Modal para Flautas -->
+    <div id="sizeModalFlautas" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('sizeModalFlautas')">&times;</span>
+            <h2>Elige una opción para Flautas</h2>
+            <p id="item-nameFlautas"></p>
+            <button id="optionFlautas1">Preparadas</button>
+            <button id="optionFlautas2">Con todo aparte</button>
+        </div>
+    </div>
+
+    <!-- Modal para Frijoles a la charra -->
+    <div id="sizeModalFrijoles" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('sizeModalFrijoles')">&times;</span>
+            <h2>Elige un tamaño para Frijoles a la charra</h2>
+            <p id="item-nameFrijoles"></p>
+            <button id="optionFrijoles1">De 1/4</button>
+            <button id="optionFrijoles2">De 1/2</button>
+            <button id="optionFrijoles3">De 1 litro</button>
+        </div>
+    </div>
+
+    <!-- Modal para Guisos -->
+    <div id="sizeModalGuisos" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('sizeModalGuisos')">&times;</span>
+            <h2>Elige una opción para Guisos</h2>
+            <p id="item-nameGuisos"></p>
+            <button id="optionGuisos1">Chicharron en salsa verde</button>
+            <button id="optionGuisos2">Picadillo con papas</button>
+            <button id="optionGuisos3">Pollo con chile colorado</button>
+            <button id="optionGuisos4">Frijoles con queso</button>
+        </div>
+    </div>
+
+    <!-- Modal para Enchiladas -->
+    <div id="sizeModalEnchiladas" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('sizeModalEnchiladas')">&times;</span>
+            <h2>Elige una opción para Enchiladas</h2>
+            <p id="item-nameEnchiladas"></p>
+            <button id="optionEnchiladas1">Con cebolla</button>
+            <button id="optionEnchiladas2">Sin cebolla</button>
+        </div>
+    </div>
+
+    <!-- Modal para Hamburguesas -->
+    <div id="sizeModalHamburguesas" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('sizeModalHamburguesas')">&times;</span>
+            <h2>Elige una opción para el tamaño de la Hamburguesa</h2>
+            <p id="item-nameHamburguesas"></p>
+            <button id="optionHamburguesas1">Censilla</button>
+            <button id="optionHamburguesas2">Doble</button>
+        </div>
+    </div>
+
+ <!-- Botón Ver Carrito -->
+ <button id="viewCartButton" onclick="openCart()">Ver Carrito</button>
+</body>
+</html>
